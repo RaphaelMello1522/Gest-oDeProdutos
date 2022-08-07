@@ -1,0 +1,1 @@
+Para compilar o projeto será necessário efetuar o comando add-migration no package manager console do visual studio e depois executar o comando update-database.

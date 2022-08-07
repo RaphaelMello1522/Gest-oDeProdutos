@@ -1,0 +1,27 @@
+﻿<h3>Lista de Produtos</h3>
+<a class="btn btn-info" asp-controller="product" asp-action="add">Novo Produto</a>
+<table class="table table-hover">
+    <tr>
+        <th>Id</th>
+        <th>Nome</th>
+        <th>Descrição</th>
+        <th>Data da Venda</th>
+        <th>Preço</th>
+        <th>Em Estoque?</th>
+    </tr>    
+    @foreach(var product in ViewBag.products)
+    {
+        <tr>
+            <td>@product.Id</td>
+            <td>@product.Name</td>
+            <td>@product.Description</td>
+            <td>@product.SellDate</td>
+            <td>@product.Price</td>
+            <td>@product.IsActive</td>
+            <td>
+                <a class="btn btn-danger" asp-controller="product" asp-action="delete" asp-route-id="@product.Id">Excluir</a>
+                <a class="btn btn-warning" asp-controller="product" asp-action="edit" asp-route-id="@product.Id">Editar</a>
+            </td>
+        </tr>
+    }
+</table>
